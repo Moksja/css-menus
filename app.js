@@ -1,5 +1,3 @@
-
-
 // changement de thème - - - - - - - - - - - - - - 
 
 const plantButton = document.getElementById('plant');
@@ -21,3 +19,10 @@ iceteaButton.addEventListener('click', () => changeClass('icetea'));
 cloudButton.addEventListener('click', () => changeClass('cloud'));
 jellyButton.addEventListener('click', () => changeClass('jelly'));
 
+// menu de droite 
+let toggle = document.querySelector('.toggle');
+let rightMenu = document.querySelector('.right-menu');
+
+toggle.onclick = function() {
+    rightMenu.classList.toggle('active');
+}

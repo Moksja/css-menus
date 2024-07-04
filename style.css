@@ -16,6 +16,15 @@ body {
     background: var(--bg1);
 }
 
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100vw;
+    height: auto;
+}
+
 /* Navigation bar */
 ul {
     list-style-type: none;
@@ -73,7 +82,7 @@ a {
     color: var(--menu-txt);
     text-shadow: rgba(255, 255, 255, 0.5) 0 0 5px;
 }
-i {
+.left-menu-container i {
     margin-left: 5%;
     color: var(--menu-txt);
     font-size: 1.25rem;
@@ -81,7 +90,7 @@ i {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
 }
-i:hover {
+.left-menu-container i:hover {
    transform: scale(1.1); 
    transition: scale 500ms ease-in-out;
 }
@@ -107,7 +116,6 @@ i:hover {
     opacity: 0;
     transition: opacity 200ms ease-in, visibility 0ms 0ms ease-in; 
 }
-
 .left-menu-deployer:hover p {
     opacity: 1;
     visibility: visible;
@@ -122,11 +130,114 @@ i:hover {
 }
 
 
+/* Right side */
+.right-menu-container {
+    position: absolute;
+    z-index: 3;
+
+    width: 300px;
+    height: 300px;
+    background-color: var(--menu-bg);
+    box-shadow: var(--menu-bg-a) 0 0 10px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    right: 2.5%;
+    top: 25%;
+}
+
+.right-menu {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0; 
+    margin: 0; 
+}
+
+.right-menu li {
+    position: absolute;
+    list-style: none;
+    left: 0;
+
+    transition: 0.5s;
+    transform-origin: 140px;
+    transform: rotate(0deg) translateX(100px);
+
+    font-size: 2.5rem;
+    color: var(--menu-txt);
+}
+.right-menu.active li {
+    transform: rotate(calc(360deg / 6 * var(--i))) translateX(0px);
+}
+.right-menu.active li:hover {
+    width: 60px;
+    height: 60px;
+    color : var(--menu-txt);
+}
+
+.right-menu .toggle {
+    position: absolute;
+    font-size: 5rem;
+    color: var(--menu-txt);
+    background-color: var(--menu-bg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+
+    border-radius: 50%;
+    border: 2px solid var(--menu-txt);
+
+    transition: transform 1.25s;
+}
+.right-menu.active .toggle {
+    transform: rotate(315deg);
+}
+
+.right-menu li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bg2);
+    text-decoration: none;
+
+    width: 40px;
+    height: 40px;
+    
+    padding: 5px;
+    border: 2px solid var(--bg2);
+    border-radius: 50%;
+}
+
+.right-menu li a:hover {
+    color : var(--menu-txt);
+    font-size: 3.5rem;
+    border: 2px solid var(--menu-txt);
+    width: 60px;
+    height: 60px;
+}
+
+
+
 
 /* Header */
 header {
     z-index: 0;
     position: relative;
+    width: 100%;
     height: 70%;
     padding: 1rem;
     background: var(--bg2);
